@@ -23,7 +23,6 @@ public class OdontologoController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Odontologo> buscarPorId(@PathVariable Long id) {
-
         return ResponseEntity.ok(odontologoService.buscarPorId(id));
     }
     @PostMapping
@@ -37,13 +36,14 @@ public class OdontologoController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> actualizar(@PathVariable Long id, @RequestBody Odontologo odontologo) {
-        ResponseEntity<?> response;
+    public ResponseEntity<String> actualizar(@PathVariable Long id, @RequestBody Odontologo odontologo) {
+        ResponseEntity<String> response;
         Odontologo odontologoExistente = odontologoService.buscarPorId(id);
         if(odontologoExistente != null) {
             odontologo.setId(id);
             odontologoService.actualizar(odontologo);
-            response = ResponseEntity.ok("Odontologo actualizado. Nro ID: " + id);
+            String responseBody = "{\"message\": \"Odontologo actualizado. Nro ID: " + id + "\"}";
+            return ResponseEntity.ok().body(responseBody);
         } else {
             response = ResponseEntity.status(HttpStatus.NOT_FOUND).body("No se encontró el Odontólogo con ID: " + id);
         }

@@ -19,7 +19,8 @@ window.addEventListener('load', function () {
                     '<td class=\"td_id\">' + dentist.id + '</td>' +
                     '<td class=\"td_nombre\">' + dentist.nombre.toUpperCase() + '</td>' +
                     '<td class=\"td_apellido\">' + dentist.apellido.toUpperCase() + '</td>' +
-                    '<td class=\"td_matricula\">' + dentist.matricula + '</td>'
+                    '<td class=\"td_matricula\">' + dentist.matricula + '</td>' +
+                    '<td><button type="button" class="btn btn-danger btn-delete" data-id="' + dentist.id + '">X</button></td>'
                     ;
 
         };

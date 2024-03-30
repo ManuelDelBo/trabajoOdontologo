@@ -11,17 +11,18 @@ window.addEventListener('load', function () {
       .then(data => {
         for(paciente of data){
         var table = document.getElementById("pacienteTable");
-        ver pacienteRow = table.insertRow();
+        var pacienteRow = table.insertRow();
         let tr_id = 'tr_' + paciente.id;
         pacienteRow.id = tr_id;
 
-        pacienteRow.innerHTML = `
-                             <td>${paciente.id}</td>
-                             <td>${paciente.nombre.toUpperCase()}</td>
-                             <td>${paciente.apellido.toUpperCase()}</td>
-                             <td>${paciente.dni}</td>
-                             <td>${paciente.calle} ${paciente.numero}, ${paciente.localidad}, ${paciente.provincia}</td>
-                        `;
+        pacienteRow.innerHTML =
+                             '<td class=\"td_id\">' + paciente.id + '</td>' +
+                             '<td class=\"td_nombre\">' + paciente.nombre.toUpperCase() + '</td>' +
+                             '<td class=\"td_apellido\">' + paciente.apellido.toUpperCase() + '</td>' +
+                             '<td class=\"td_dni\">' + paciente.dni + '</td>' +
+                             '<td class="td_calle">' + paciente.calle + ' ' + paciente.numero + ', ' + paciente.localidad + ', ' + paciente.provincia + '</td>' +
+                             '<td><button type="button" class="btn btn-danger btn-delete" data-id="' + paciente.id + '">X</button></td>'
+                        ;
         };
     })
     })

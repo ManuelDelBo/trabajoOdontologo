@@ -9,6 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script text="text/javascript" src="/js/get_paciente.js"></script>
+    <script text="text/javascript" src="/js/delete_paciente.js"></script>
 
 </head>
 <body>
@@ -24,7 +25,7 @@
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                    Gestión odontólogos
+                    Odontólogos
                 </a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="listarOdontologos.html">Listar odontólogos</a>
@@ -83,7 +84,7 @@
                     <th>Apellido</th>
                     <th>DNI</th>
                     <th>Domicilio</th>
-
+                    <th></th>
                     <th></th>
                 </tr>
                 </thead>
@@ -118,6 +119,9 @@
                 <div class="form-group">
                     <label >Domcicilio:</label>
                     <input type="text" class="form-control" placeholder="domicilio" id="domicilio">
+                </div>
+                <div class="form-group">
+
                 </div>
 
                 <button type="submit" class="btn btn-primary">Modificar</button>

@@ -20,13 +20,19 @@ public class Paciente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nombre;
+
     private String apellido;
+
     private String dni;
+
     private LocalDate fechaIngreso;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "domicilio_id", referencedColumnName = "id")
     private Domicilio domicilio;
+
     @OneToMany(mappedBy = "paciente", fetch = FetchType.LAZY)
     private Set<Turno> turnoSet = new HashSet<>();
 }

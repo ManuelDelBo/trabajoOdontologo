@@ -7,7 +7,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/js/post_odontologo.js"></script>
+<script type="text/javascript" src="/js/put_odontologo.js"></script>
 </head>
 
 <body>
@@ -22,7 +22,7 @@
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                    Gestión odontólogos
+                    Odontólogos
                 </a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="listarOdontologos.html">Listar odontólogos</a>
@@ -74,13 +74,14 @@
             <h3>Actualizar datos odontólogo</h3>
             <form id="update_dentist_form">
                 <input type="hidden" id="odontologo_id" name="odontologo_id">
+                <h6>Ingrese el ID del odontologo:</h6>
                 <div class="form-group">
-                    <label class="control-label" for="matricula">Buscar por Matricula:</label>
-                    <input type="text" class="form-control" id="matricula"
-                           placeholder="Ingrese la matrícula"
-                           name="matricula" required></input>
+                    <label class="control-label" for="id">Id:</label>
+                    <input type="text" class="form-control" id="id"
+                           placeholder="Ingrese el id"
+                           name="id" required></input>
                 </div>
-                <h5>Datos a actualizar</h5>
+                <h6>Modifique los datos:</h6>
                 <div class="form-group">
                     <label class="control-label" for="nombre">Nombre:</label>
                     <input type="text" class="form-control" id="nombre"
@@ -93,7 +94,12 @@
                            placeholder="Ingrese el nuevo apellido"
                            name="apellido" required></input>
                 </div>
-
+                <div class="form-group">
+                    <label class="control-label" for="matricula">Matricula:</label>
+                    <input type="text" class="form-control" id="matricula"
+                           placeholder="Ingrese la matrícula"
+                           name="matricula" required></input>
+                </div>
                 <button type="submit" class="btn btn-danger"
                         id="btn-add-new-dentist">Actualizar</button>
             </form>

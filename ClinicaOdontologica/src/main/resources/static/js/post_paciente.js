@@ -27,7 +27,7 @@ const formData = {
                        .then(data => {
                                 let successAlert = '<div class="alert alert-success alert-dismissible">' +
                                 '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                                '<strong></strong> Odontólogo agregado </div>'
+                                '<strong></strong> Paciente agregado </div>'
 
                             document.querySelector('#response').innerHTML = successAlert;
                             document.querySelector('#response').style.display = "block";
@@ -35,16 +35,13 @@ const formData = {
 
                        })
                        .catch(error => {
-                               //Si hay algun error se muestra un mensaje diciendo que el odontólogo
-                               //no se pudo guardar y se intente nuevamente
                                let errorAlert = '<div class="alert alert-danger alert-dismissible">' +
                                                 '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
                                                 '<strong> Error intente nuevamente</strong> </div>'
 
                                  document.querySelector('#response').innerHTML = errorAlert;
                                  document.querySelector('#response').style.display = "block";
-                                //se dejan todos los campos vacíos por si se quiere ingresar otro odontólogo
-                                resetUploadForm();})
+                                 resetUploadForm();})
 
 
 });
@@ -64,7 +61,7 @@ const formData = {
         let pathname = window.location.pathname;
         if(pathname === "/"){
             document.querySelector(".nav .nav-item a:first").addClass("active");
-        } else if (pathname == "/dentistList.html") {
+        } else if (pathname == "/listarPaaciente.html") {
             document.querySelector(".nav .nav-item a:last").addClass("active");
         }
     })();

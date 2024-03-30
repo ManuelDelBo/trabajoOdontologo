@@ -1,5 +1,6 @@
 package com.dh.ClinicaOdontologica.controller;
 
+import com.dh.ClinicaOdontologica.entity.Odontologo;
 import com.dh.ClinicaOdontologica.entity.Paciente;
 import com.dh.ClinicaOdontologica.exception.ResourceNotFounfException;
 import com.dh.ClinicaOdontologica.service.IPacienteService;
@@ -34,4 +35,22 @@ public class PacienteController {
         pacienteService.eliminar(id);
         return new ResponseEntity<>("Paciente eliminado correctamente", HttpStatus.OK);
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<String> actualizar(@PathVariable Long id, @RequestBody Paciente paciente) {
+        ResponseEntity<String> response;
+        Paciente pacienteExistente = pacienteService.buscarPorId(id);
+        if(pacienteExistente != null) {
+            paciente.setId(id);
+            pacienteService.actualizar(paciente);
+            String responseBody = "{\"message\": \"Paciente actualizado. Nro ID: " + id + "\"}";
+            return ResponseEntity.ok().body(responseBody);
+        } else {
+            response = ResponseEntity.status(HttpStatus.NOT_FOUND).body("No se encontró el Odontólogo con ID: " + id);
+        }
+        return response;
+
+    }
 }
+
+

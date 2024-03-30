@@ -1,10 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+<html lang="es">
+<title>Clinica Odontologica</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/put_paciente.js"></script>
 </head>
-<body>
 
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html">Clínica Odontológica</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                    Odontólogos
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="listarOdontologos.html">Listar odontólogos</a>
+                    <a class="dropdown-item" href="crearOdontologos.html">Agregar odontólogos</a>
+                    <a class="dropdown-item" href="actualizarOdontologos.html">Actualizar odontólogos</a>
+                </div>
+            </li>
+
+        </ul>
+
+    </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContentPaciente">
+        <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                    Pacientes
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="listarPacientes.html">Listar pacientes</a>
+                    <a class="dropdown-item" href="crearPacientes.html">Agregar pacientes</a>
+                    <a class="dropdown-item" href="actualizarPacientes.html">Actualizar pacientes</a>
+                </div>
+            </li>
+
+        </ul>
+
+    </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContentTurnos">
+        <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                    Turnos
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="crearTurnos.html">Nuevo turno</a>
+                    <a class="dropdown-item" href="listarTurnos.html">Todos los turnos</a>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-7" style="background-color:#e6fffa; padding:10px; border-radius:3px">
+            <h3>Actualizar datos paciente</h3>
+            <form id="update_paciente_form">
+                <input type="hidden" id="paciente_id" name="paciente_id">
+                <h6>Ingrese el ID del paciente:</h6>
+                <div class="form-group">
+                    <label class="control-label" for="id">Id:</label>
+                    <input type="text" class="form-control" id="id"
+                           placeholder="Ingrese el id"
+                           name="id" required></input>
+                </div>
+                <h6>Modifique los datos:</h6>
+                <div class="form-group">
+                    <label class="control-label" for="nombre">Nombre:</label>
+                    <input type="text" class="form-control" id="nombre"
+                           placeholder="Ingrese el nuevo nombre"
+                           name="nombre" required></input>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="apellido">Apellido:</label>
+                    <input type="text" class="form-control" id="apellido"
+                           placeholder="Ingrese el nuevo apellido"
+                           name="apellido" required></input>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="dni">Dni:</label>
+                    <input type="text" class="form-control" id="dni"
+                           placeholder="Ingrese el Dni"
+                           name="dni" required></input>
+                </div>
+                <div class="form-group">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="date">Fecha Ingreso</label>
+                    <input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                           id="date"
+                           name="date"
+                           type="date"
+                           placeholder="fecha de ingreso"/>
+                </div>
+                <div class="form-group">
+                <label class="control-label" for="calle">Calle:</label>
+                <input type="text" class="form-control" id="calle"
+                       placeholder="Ingrese su calle"
+                       name="calle" required></input>
+                </div>
+                <div class="form-group">
+                <label class="control-label" for="numero">Nro de su domciilio:</label>
+                <input type="text" class="form-control" id="numero"
+                       placeholder="Ingrese el numero de su domicilio"
+                       name="numero" required></input>
+                </div>
+                <div class="form-group"><label class="control-label" for="localidad">Localidad:</label>
+                <input type="text" class="form-control" id="localidad"
+                       placeholder="Ingrese su localidad"
+                       name="localidad" required></input>
+                </div>
+                <div class="form-group">
+                <label class="control-label" for="provincia">Provincia:</label>
+                <input type="text" class="form-control" id="provincia"
+                       placeholder="Ingrese su provincia"
+                       name="provincia" required></input>
+                </div>
+                <button type="submit" class="btn btn-danger"
+                        id="btn-add-new-paciente">Actualizar</button>
+            </form>
+            <div id="response" style="display:none; margin-top:10px">
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
