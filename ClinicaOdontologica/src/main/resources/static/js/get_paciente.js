@@ -20,7 +20,7 @@ window.addEventListener('load', function () {
                              '<td class=\"td_nombre\">' + paciente.nombre.toUpperCase() + '</td>' +
                              '<td class=\"td_apellido\">' + paciente.apellido.toUpperCase() + '</td>' +
                              '<td class=\"td_dni\">' + paciente.dni + '</td>' +
-                             '<td class="td_calle">' + paciente.calle + ' ' + paciente.numero + ', ' + paciente.localidad + ', ' + paciente.provincia + '</td>' +
+                             '<td class="td_calle">' + paciente.domicilio.calle.toUpperCase() + ' ' + paciente.domicilio.numero + ', ' + paciente.domicilio.localidad.toUpperCase() + ', ' + paciente.domicilio.provincia.toUpperCase() + '</td>' +
                              '<td><button type="button" class="btn btn-danger btn-delete" data-id="' + paciente.id + '">X</button></td>'
                         ;
         };

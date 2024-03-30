@@ -1,5 +1,6 @@
 package com.dh.ClinicaOdontologica.controller;
 
+import com.dh.ClinicaOdontologica.entity.Paciente;
 import com.dh.ClinicaOdontologica.entity.Turno;
 import com.dh.ClinicaOdontologica.service.IOdontologoService;
 import com.dh.ClinicaOdontologica.service.IPacienteService;
@@ -9,10 +10,9 @@ import com.dh.ClinicaOdontologica.service.implementation.PacienteService;
 import com.dh.ClinicaOdontologica.service.implementation.TurnoService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/turno")
@@ -38,6 +38,10 @@ public class TurnoController {
             response = ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
         return response;
+    }
+    @GetMapping
+    public ResponseEntity<List<Turno>> listarTodos(){
+        return ResponseEntity.ok(turnoService.listarTodos());
     }
 }
 

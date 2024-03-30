@@ -7,11 +7,13 @@ const formData = {
             nombre: document.querySelector('#nombre').value,
             apellido: document.querySelector('#apellido').value,
             dni: document.querySelector('#dni').value,
-            date: document.querySelector('#date').value,
-            calle: document.querySelector('#calle').value,
-            numero: Number(document.querySelector('#numero').value),
-            localidad: document.querySelector('#localidad').value,
-            provincia: document.querySelector('#provincia').value,
+            fechaIngreso: document.querySelector('#date').value,
+            domicilio: {
+                    calle: document.querySelector('#calle').value,
+                    numero: document.querySelector('#numero').value,
+                    localidad: document.querySelector('#localidad').value,
+                    provincia: document.querySelector('#provincia').value
+                }
             };
 
            const url = '/paciente';

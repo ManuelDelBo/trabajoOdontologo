@@ -9,7 +9,7 @@ fetch('/paciente')
             pacientes.forEach(paciente => {
                 const option = document.createElement('option');
                 option.value = paciente.id;
-                option.textContent = paciente.nombre + ' ' + paciente.apellido;
+                option.textContent = paciente.nombre.toUpperCase() + ' ' + paciente.apellido.toUpperCase();
                 pacienteSelect.appendChild(option);
             });
         })
@@ -22,7 +22,7 @@ fetch('/paciente')
             odontologos.forEach(odontologo => {
                 const option = document.createElement('option');
                 option.value = odontologo.id;
-                option.textContent = odontologo.nombre + ' ' + odontologo.apellido;
+                option.textContent = odontologo.nombre.toUpperCase() + ' ' + odontologo.apellido.toUpperCase();
                 odontologoSelect.appendChild(option);
             });
         })

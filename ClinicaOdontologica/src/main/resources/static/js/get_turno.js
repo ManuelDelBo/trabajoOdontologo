@@ -15,12 +15,12 @@ window.addEventListener('load', function () {
         let tr_id = 'tr_' + turno.id;
         turnoRow.id = tr_id;
 
-        turnoRow.innerHTML = `
-                             <td>${turno.odontologo.nombre.toUpperCase()}, ${turno.odontologo.apellido.toUpperCase()}</td>
-                             <td>${turno.paciente.nombre.toUpperCase()}, ${turno.odontologo.apellido.toUpperCase()}</td>
-                             <td>${turno.fecha}</td>
-                             <td>${turno.hora}</td>
-                        `;
+        turnoRow.innerHTML =
+                             '<td class="td_odontologo">' + turno.odontologo.nombre.toUpperCase() + ' ' + turno.odontologo.apellido.toUpperCase() + '</td>' +
+                             '<td class="td_paciente">' + turno.paciente.nombre.toUpperCase() + ' ' + turno.paciente.apellido.toUpperCase() + '</td>' +
+                             '<td class="td_date">' + turno.fecha + '</td>' +
+                             '<td class="td_hora">' + turno.hora + '</td>';
+
         };
     })
     })
