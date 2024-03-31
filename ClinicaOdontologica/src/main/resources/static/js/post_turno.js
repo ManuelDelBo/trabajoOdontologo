@@ -1,8 +1,6 @@
 window.addEventListener('load', function () {
-
-const formulario = document.querySelector('#add_new_turno');
-
-fetch('/paciente')
+    const formulario = document.querySelector('#add_new_turno');
+    fetch('/paciente')
         .then(response => response.json())
         .then(pacientes => {
             const pacienteSelect = document.getElementById('paciente');
@@ -28,66 +26,58 @@ fetch('/paciente')
         })
         .catch(error => console.error('Error al obtener odontólogos:', error));
 
-formulario.addEventListener('submit', function (event) {
-event.preventDefault();
+    formulario.addEventListener('submit', function (event) {
+    debugger;
+        event.preventDefault();
 
-const pacienteId = document.querySelector('#paciente').value;
-const odontologoId = document.querySelector('#odontologo').value;
-const fechaTurno = document.querySelector('#date').value;
-const hora = document.querySelector('#hora').value;
+        const formData = {
+            paciente: {
+                id: parseInt(document.querySelector('#paciente').value)
+            },
+            odontologo: {
+                id: parseInt(document.querySelector('#odontologo').value)
+            },
+            fechaTurno: document.querySelector('#date').value,
+            hora: document.querySelector('#hora').value
+        };
 
-const formData = {
-            paciente: { id: pacienteId },
-            odontologo: { id: odontologoId },
-            date: fechaTurno,
-            };
+        const url = '/turno';
+        const settings = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+        };
 
-           const url = '/turno';
-           const settings = {
-                  method: 'POST',
-                  headers: {
-                      'Content-Type': 'application/json',
-                  },
-                  body: JSON.stringify(formData)
-           }
-           fetch(url, settings)
-                       .then(response => response.json())
-                       .then(data => {
-                                let successAlert = '<div class="alert alert-success alert-dismissible">' +
-                                '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                                '<strong></strong> Turno agregado </div>'
+        fetch(url, settings)
+            .then(response => response.json())
+            .then(data => {
+                let successAlert = '<div class="alert alert-success alert-dismissible">' +
+                    '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                    '<strong></strong> Turno agregado </div>';
 
-                            document.querySelector('#response').innerHTML = successAlert;
-                            document.querySelector('#response').style.display = "block";
-                            resetUploadForm();
+                document.querySelector('#response').innerHTML = successAlert;
+                document.querySelector('#response').style.display = "block";
+                resetUploadForm();
 
-                       })
-                       .catch(error => {
+            })
+            .catch(error => {
+                let errorAlert = '<div class="alert alert-danger alert-dismissible">' +
+                    '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                    '<strong> Error intente nuevamente</strong> </div>';
 
-                               let errorAlert = '<div class="alert alert-danger alert-dismissible">' +
-                                                '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                                                '<strong> Error intente nuevamente</strong> </div>'
+                document.querySelector('#response').innerHTML = errorAlert;
+                document.querySelector('#response').style.display = "block";
+                resetUploadForm();
+            });
+            console.log(formData);
+    });
 
-                                 document.querySelector('#response').innerHTML = errorAlert;
-                                 document.querySelector('#response').style.display = "block";
-                                 resetUploadForm();})
-
-
-});
-    function resetUploadForm(){
+    function resetUploadForm() {
         document.querySelector('#paciente').value = "";
         document.querySelector('#odontologo').value = "";
         document.querySelector('#date').value = "";
         document.querySelector('#hora').value = "";
-
     }
-
-    (function(){
-        let pathname = window.location.pathname;
-        if(pathname === "/"){
-            document.querySelector(".nav .nav-item a:first").addClass("active");
-        } else if (pathname == "/listarTurnos.html") {
-            document.querySelector(".nav .nav-item a:last").addClass("active");
-        }
-    })();
 });

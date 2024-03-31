@@ -31,8 +31,9 @@ public class TurnoController {
     @PostMapping
     public ResponseEntity<Turno> guardar(@RequestBody Turno turno){
         ResponseEntity<Turno> response;
-        if (odontologoService.buscarPorId(turno.getOdontologo().getId()) != null &&
-                pacienteService.buscarPorId(turno.getPaciente().getId()) != null) {
+        if (turno.getPaciente() != null && turno.getPaciente().getId() != null &&
+                pacienteService.buscarPorId(turno.getPaciente().getId()) != null &&
+                odontologoService.buscarPorId(turno.getOdontologo().getId()) != null){
             response = ResponseEntity.ok(turnoService.guardar(turno));
         } else {
             response = ResponseEntity.status(HttpStatus.BAD_REQUEST).build();

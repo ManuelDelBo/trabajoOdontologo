@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Entity
 @Table(name = "turnos")
@@ -24,5 +25,7 @@ public class Turno {
 
     @ManyToOne
     private Paciente paciente;
+
     private LocalDate fecha;
+    private LocalTime hora;
 }

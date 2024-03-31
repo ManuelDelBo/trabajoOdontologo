@@ -33,6 +33,6 @@ public class Paciente {
     @JoinColumn(name = "domicilio_id", referencedColumnName = "id")
     private Domicilio domicilio;
 
-    @OneToMany(mappedBy = "paciente", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "paciente")
     private Set<Turno> turnoSet = new HashSet<>();
 }
