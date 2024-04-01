@@ -8,8 +8,6 @@ window.addEventListener('load', function () {
         fetch(url, settings)
             .then(response => response.json())
             .then(data => {
-            console.log(data);
-            debugger;
                 for (let turno of data) {
                     let table = document.getElementById("turnoTable");
                     let turnoRow = table.insertRow();
@@ -17,15 +15,11 @@ window.addEventListener('load', function () {
                     turnoRow.id = tr_id;
 
                     turnoRow.innerHTML =
-                        '<td class="td_paciente">' + turno.paciente.nombre.toUpperCase() + ' ' + turno.paciente.apellido.toUpperCase() + '</td>' +
-                        '<td class="td_odontologo">' + turno.odontologo.nombre.toUpperCase() + ' ' + turno.odontologo.apellido.toUpperCase() + '</td>' +
+                        '<td class="td_paciente">' + (turno.paciente ? turno.paciente.nombre.toUpperCase() + ' ' + turno.paciente.apellido.toUpperCase() : 'Paciente no definido') + '</td>' +
+                        '<td class="td_odontologo">' + (turno.odontologo ? turno.odontologo.nombre.toUpperCase() + ' ' + turno.odontologo.apellido.toUpperCase() : 'Paciente no definido') + '</td>' +
                         '<td class="td_date">' + turno.fecha + '</td>' +
                         '<td class="td_hora">' + turno.hora + '</td>';
                 }
-                console.log(turno.paciente);
-                console.log(turno.odontologo);
-                console.log(turno.paciente.nombre);
-                console.log(turno.odontologo.nombre);
             });
     })();
         (function(){

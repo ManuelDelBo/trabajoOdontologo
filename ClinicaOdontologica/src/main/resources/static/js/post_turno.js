@@ -37,7 +37,7 @@ window.addEventListener('load', function () {
             odontologo: {
                 id: parseInt(document.querySelector('#odontologo').value)
             },
-            fechaTurno: document.querySelector('#date').value,
+            fecha: document.querySelector('#date').value,
             hora: document.querySelector('#hora').value
         };
 

@@ -2,3 +2,25 @@
 [2024-03-19 23:10:21] [ INFO ] [OdontologoDaoH2:121] Estamos consultando todos los Odontologos.
 [2024-03-19 23:17:49] [ INFO ] [OdontologoDaoH2:121] Estamos consultando todos los Odontologos.
 [2024-03-19 23:17:57] [ INFO ] [OdontologoDaoH2:121] Estamos consultando todos los Odontologos.
+[2024-03-31 21:53:11] [ INFO ] [TurnoController:40] Turno guardado exitosamente
+[2024-03-31 21:53:48] [ INFO ] [TurnoController:40] Turno guardado exitosamente
+[2024-03-31 22:07:22] [ INFO ] [TurnoController:40] Turno guardado exitosamente
+[2024-03-31 22:24:52] [ INFO ] [TurnoController:49] Turno guardado exitosamente
+[2024-03-31 22:30:45] [ INFO ] [TurnoController:49] Turno guardado exitosamente
+[2024-03-31 22:36:19] [ INFO ] [TurnoController:49] Turno guardado exitosamente
+[2024-03-31 22:38:38] [ INFO ] [TurnoController:42] Turno guardado exitosamente
+[2024-03-31 22:50:40] [ INFO ] [TurnoController:40] Turno guardado exitosamente
+[2024-03-31 22:51:20] [ INFO ] [TurnoController:40] Turno guardado exitosamente
+[2024-03-31 22:52:28] [ INFO ] [TurnoController:41] Turno guardado exitosamente
+[2024-03-31 23:03:33] [ INFO ] [TurnoController:41] Turno guardado exitosamente
+[2024-03-31 23:04:32] [ INFO ] [TurnoController:41] Turno guardado exitosamente
+[2024-03-31 23:15:19] [ INFO ] [TurnoController:41] Turno guardado exitosamente
+[2024-03-31 23:29:32] [ INFO ] [OdontologoController:34] Odontologo guardado
+[2024-03-31 23:29:36] [ INFO ] [OdontologoController:34] Odontologo guardado
+[2024-03-31 23:29:38] [ INFO ] [OdontologoController:40] Odontologos listados
+[2024-03-31 23:29:46] [ INFO ] [PacienteController:27] Paciente guardado
+[2024-03-31 23:29:59] [ INFO ] [PacienteController:27] Paciente guardado
+[2024-03-31 23:30:00] [ INFO ] [PacienteController:33] Pacientes listados con exito
+[2024-03-31 23:30:03] [ INFO ] [PacienteController:33] Pacientes listados con exito
+[2024-03-31 23:30:03] [ INFO ] [OdontologoController:40] Odontologos listados
+[2024-03-31 23:30:10] [ INFO ] [TurnoController:41] Turno guardado exitosamente
